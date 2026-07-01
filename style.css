@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+    background:linear-gradient(135deg,#ffd6e8,#ffe8f3,#fff7fb);
+    overflow-x:hidden;
+    overflow-y:auto;
+    min-height:100vh;
+}
+
+.page{
+    min-height:100vh;
+    width:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.page.active{
+    display:flex;
+    animation:fade .7s ease;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:30px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(255,105,180,.18);
+}
+
+.bear{
+    font-size:90px;
+    animation:float 3s ease-in-out infinite;
+}
+
+h1{
+    color:#ff4f93;
+    font-size:42px;
+    margin:20px 0;
+}
+
+h2{
+    color:#ff5b99;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#ff79b4;
+}
+
+p{
+    color:#555;
+    line-height:1.9;
+    white-space:pre-line;
+    margin-top:18px;
+    font-size:18px;
+}
+
+button{
+    margin-top:30px;
+    background:#ff4f93;
+    color:#fff;
+    border:none;
+    border-radius:50px;
+    padding:15px 35px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ff2d7d;
+}
+
+.envelope{
+    position:relative;
+    width:380px;
+    max-width:95%;
+    background:#ff8db8;
+    border-radius:18px;
+    padding:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.flap{
+    width:100%;
+    height:70px;
+    background:#ff6da7;
+    border-radius:0 0 60px 60px;
+    margin-bottom:20px;
+}
+
+.letter{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+}
+
+.background-hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.background-hearts::before{
+    content:"💖 💕 💗 💓 💞 💝 🤍 💖 💕 💗";
+    position:absolute;
+    left:-20%;
+    top:-80px;
+    width:140%;
+    text-align:center;
+    font-size:28px;
+    opacity:.25;
+    animation:fall 14s linear infinite;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-120px);
+    }
+    to{
+        transform:translateY(120vh);
+    }
+}
+
+@media(max-width:600px){
+
+.card,
+.letter{
+    padding:25px;
+}
+
+h1{
+    font-size:32px;
+}
+
+p{
+    font-size:16px;
+}
+
+button{
+    width:100%;
+}
+
+.bear{
+    font-size:70px;
+}
+
+}
